@@ -1,0 +1,173 @@
+/* ===== Corps ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Header & Footer ===== */
+#app-header, #app-footer {
+    background-color: #004680; /* Bleu de l'app */
+    color: white;
+    text-align: center;
+}
+
+#app-header {
+    padding: 20px 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#app-footer {
+    padding: 12px 0;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 500px;
+    margin: 40px auto 80px auto; /* espace au-dessus et en dessous */
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Labels ===== */
+label {
+    display: block;
+    margin: 10px 0 5px 0;
+    font-weight: 500;
+}
+
+/* ===== Inputs / Textarea ===== */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ===== Boutons ===== */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #004680;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #0055a0;
+}
+
+#generateBtn:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+  }
+
+.options {
+    width: 100%;
+}
+
+.options .row {
+    display: flex;
+    justify-content: space-between; /* espace égal entre les 2 labels */
+}
+
+.options label {
+    flex: 0 0 48%;    /* chaque label prend ~la moitié de la ligne */
+    display: flex;
+    align-items: center;
+}
+
+
+/* ===== Output & Entropy ===== */
+pre {
+    background: #e8e8e8;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+}
+
+.entropy-container {
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.entropy-bar-container {
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.entropy-bar-track {
+    width: 100%;
+    height: 15px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.entropy-bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 6px; /* arrondi début ET fin */
+    transition: width 0.4s ease, background 0.4s ease; /* animation fluide */
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #004680; /* couleur de coche */
+  cursor: pointer;
+}
+
+/* Toast global */
+.toast {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #004680;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
