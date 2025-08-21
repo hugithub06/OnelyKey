@@ -171,3 +171,11 @@ input[type="checkbox"] {
     transform: translateX(-50%) translateY(0);
 }
 
+/* --- Version mobile --- */
+@media (max-width: 768px) {
+    .container {
+        max-width: none;       /* supprime la limite de 500px */
+        margin: 20px 10px 80px 10px; /* marge 10px sur les côtés, marge en bas pour le footer */
+        border-radius: 0;      /* optionnel : supprime les angles arrondis pour coller au bord */
+    }
+}
