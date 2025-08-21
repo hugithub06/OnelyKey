@@ -1,9 +1,11 @@
 /* ===== Corps ===== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f0f0f0;
     margin: 0;
     padding: 0;
+}
+body:not(#home-body) {
+    background: #f0f0f0;
 }
 
 .index-container {
@@ -103,7 +105,7 @@ textarea {
 
 
 /* ===== Boutons ===== */
-button, a.btn {
+button, a.btn:not(.playstore-btn) {
     padding: 12px;
     background-color: #004680;
     color: white;
@@ -118,7 +120,7 @@ button {
     width: 100%; /* bouton prend toute la largeur */
 }
 
-button:enabled:hover, a.btn:hover {
+button:enabled:hover, a.btn:not(.playstore-btn):hover {
     box-shadow: 0 4px 15px rgba(0, 120, 215, 0.5); /* halo bleu */
     transform: translateY(-2px); /* petit soulèvement */
 }
@@ -265,6 +267,37 @@ ul {
 li {
     margin-bottom: 8px;
 }
+
+.playstore-btn {
+  display: inline-block;
+  max-width: 220px;       /* limite la taille du badge */
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.playstore-btn img {
+  width: 100%;            /* responsive */
+  height: auto;
+  display: block;
+}
+
+.playstore-btn:hover {
+  transform: scale(1.05);
+}
+
+#mobile-icon {
+    width: 100px;          /* taille de l'icône mobile */
+    height: auto;
+}
+
+.playstore-container {
+  display: flex;
+  align-items: center;       /* centre verticalement */
+  gap: 15px;                 /* espace entre l’icône et le badge */
+  justify-content: center;   /* centre horizontalement dans le parent */
+  flex-wrap: wrap;           /* passe à la ligne si écran trop petit */
+}
+
 
 
 /* --- Version mobile --- */
