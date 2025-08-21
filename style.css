@@ -6,6 +6,17 @@ body {
     padding: 0;
 }
 
+.index-container {
+    min-height: 100vh;        /* prend toute la hauteur de l’écran */
+    display: flex;
+    flex-direction: column;   /* empile header, main, footer */
+}
+main {
+    flex: 1;                  /* prend tout l’espace restant */
+    margin-bottom: 10px;      /* espace avant le footer */
+}
+
+
 /* ===== Header & Footer ===== */
 #app-header, #app-footer {
     background-color: #004680; /* Bleu de l'app */
@@ -14,18 +25,49 @@ body {
 }
 
 #app-header {
-    padding: 20px 0;
+    padding: 30px 0;
     font-size: 1.8rem;
     font-weight: bold;
+}
+
+header nav {
+    margin-top: 10px;
+    font-size: 1.4rem
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;         /* plus moderne qu'en inline */
+    justify-content: center;
+    flex-wrap: wrap;       /* permet de passer à la ligne sur petits écrans */
+    gap: 20px;             /* espace entre les liens */
+}
+
+header nav ul li a {
+    display: inline-block;   /* <== important pour que transform marche */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+header nav ul li a:hover {
+    transform: scale(1.2); /* ici tu verras bien le zoom */
 }
 
 #app-footer {
     padding: 12px 0;
     font-size: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background-color: #004680;
+    color: white;
+    text-align: center;
+    margin-top: auto;   /* pousse le footer en bas si la page est courte */
 }
+
 
 /* ===== Container ===== */
 .container {
@@ -56,15 +98,12 @@ textarea {
     border: 1px solid #ccc;
     font-size: 1rem;
     box-sizing: border-box;
-}
-
-textarea {
     resize: vertical;
 }
 
+
 /* ===== Boutons ===== */
-button {
-    width: 100%;
+button, a.btn {
     padding: 12px;
     background-color: #004680;
     color: white;
@@ -73,11 +112,15 @@ button {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 10px;
-    transition: background 0.3s;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+button {
+    width: 100%; /* bouton prend toute la largeur */
 }
 
-button:hover {
-    background-color: #0055a0;
+button:enabled:hover, a.btn:hover {
+    box-shadow: 0 4px 15px rgba(0, 120, 215, 0.5); /* halo bleu */
+    transform: translateY(-2px); /* petit soulèvement */
 }
 
 #generateBtn:disabled {
@@ -171,11 +214,79 @@ input[type="checkbox"] {
     transform: translateX(-50%) translateY(0);
 }
 
+section {
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #004680;
+}
+section p, section li {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 40px 20px;
+    align-items: center;
+}
+.hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.hero .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #004680;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;   /* supprime les puces */
+    padding-left: 0;
+    margin: 10px 0;
+}
+li {
+    margin-bottom: 8px;
+}
+
+
 /* --- Version mobile --- */
 @media (max-width: 768px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
     .container {
         max-width: none;       /* supprime la limite de 500px */
         margin: 20px 10px 80px 10px; /* marge 10px sur les côtés, marge en bas pour le footer */
         border-radius: 0;      /* optionnel : supprime les angles arrondis pour coller au bord */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header nav ul li a {
+        display: block;
     }
 }

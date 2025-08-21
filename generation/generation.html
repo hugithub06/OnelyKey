@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>OnelyKey Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="app-header">
+        <h1>OnelyKey</h1>
+        <nav>
+             <ul>
+                <li><a href="..\index.html">Accueil</a></li>
+             </ul>
+          </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <div class="container">
+        <h1>Génération procédurale</h1>
+
+        <div class="result-container">
+            <!-- Output --> 
+            <h3>Mot de passe généré :</h3>
+            <pre id="output"></pre>
+
+            <!-- Niveau de sécurité -->
+            <h3>Niveau de sécurité :</h3>
+            <pre id="entropy"></pre>
+            <div class="entropy-bar-container">
+                <div class="entropy-bar-track">
+                    <div class="entropy-bar-fill"></div>
+                </div>
+            </div>
+            <button id="copy" >Copier</button>
+            <button id="defAsMaster" >Définir comme mot de passe maître</button>
+        </div>
+
+
+
+        <!-- Master Password -->
+        <label for="master">Mot de passe maître :</label>
+        <input type="password" id="master">
+
+        <!-- Site Name -->
+        <label for="site">Nom du site :</label>
+        <input type="text" id="site">
+
+        <!-- Length -->
+        <label for="length">Longueur :</label>
+        <input type="number" id="length" value="16" min="1" max="99">
+
+        <div class="options">
+            <div class="row">
+                <label><input type="checkbox" id="useLowercase" checked> Minuscules</label>
+                <label><input type="checkbox" id="useUppercase" checked> Majuscules</label>
+            </div>
+            <div class="row">
+                <label><input type="checkbox" id="useDigits" checked> Chiffres</label>
+                <label><input type="checkbox" id="useSpecialChars" checked> Caractères spéciaux</label>
+            </div>
+        </div>
+
+
+        <!-- Custom pool -->
+        <label for="customPool">Caractères personnalisés (facultatif) :</label>
+        <textarea id="customPool" placeholder="abc123...">abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_+=</textarea>
+
+        <!-- Personal -->
+        <label><input type="checkbox" id="personal"> Mode personnel (utilise pool personnalisé)</label>
+
+        <!-- Generate Button -->
+        <button id="generateBtn" disabled>Afficher</button>
+    </div>
+
+    <!-- Footer -->
+    <footer id="app-footer">
+        <p>© 2025 OnelyKey</p>
+    </footer>
+
+    <script src="..\\app.js"></script>
+</body>
+</html>
