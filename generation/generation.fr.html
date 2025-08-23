@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>OnelyKey Web</title>
-    <meta name="description" content="OnelyKey is a simple and secure platform to generate and manage your passwords without ever storing them. Available for free on the Play Store.">
+    <meta name="description" content="OnelyKey est un site simple et sécurisée pour générer et gérer vos mots de passe sans jamais les stocker. Retrouvez-la également gratuitement sur le Play Store.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Hreflang tags -->
+    <!-- Balises hreflang -->
     <link rel="alternate" hreflang="en" href="https://monsite.com/generation/generation.html">
     <link rel="alternate" hreflang="fr" href="https://monsite.com/generation/generation.fr.html">
     
     <link rel="stylesheet" href="..\style.css">
+
 </head>
 <body>
     <!-- Header -->
@@ -17,64 +18,67 @@
         <h1>OnelyKey</h1>
         <nav>
              <ul>
-                <li><a href="..\index.html">Home</a></li>
+                <li><a href="..\index.fr.html">Accueil</a></li>
              </ul>
           </nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- Contenu principal -->
     <div class="container">
-        <h1>Procedural Password Generation</h1>
+        <h1>Génération procédurale</h1>
 
         <div class="result-container">
             <!-- Output --> 
-            <h3>Generated Password:</h3>
+            <h3>Mot de passe généré :</h3>
             <pre id="output"></pre>
 
-            <!-- Security Level -->
-            <h3>Security Level:</h3>
+            <!-- Niveau de sécurité -->
+            <h3>Niveau de sécurité :</h3>
             <pre id="entropy"></pre>
             <div class="entropy-bar-container">
                 <div class="entropy-bar-track">
                     <div class="entropy-bar-fill"></div>
                 </div>
             </div>
-            <button id="copy">Copy</button>
-            <button id="defAsMaster">Set as Master Password</button>
+            <button id="copy" >Copier</button>
+            <button id="defAsMaster" >Définir comme mot de passe maître</button>
         </div>
 
+
+
         <!-- Master Password -->
-        <label for="master">Master Password:</label>
+        <label for="master">Mot de passe maître :</label>
         <input type="password" id="master">
 
         <!-- Site Name -->
-        <label for="site">Site Name:</label>
+        <label for="site">Nom du site :</label>
         <input type="text" id="site">
 
         <!-- Length -->
-        <label for="length">Length:</label>
+        <label for="length">Longueur :</label>
         <input type="number" id="length" value="16" min="1" max="99">
 
         <div class="options">
             <div class="row">
-                <label><input type="checkbox" id="useLowercase" checked> Lowercase</label>
-                <label><input type="checkbox" id="useUppercase" checked> Uppercase</label>
+                <label><input type="checkbox" id="useLowercase" checked> Minuscules</label>
+                <label><input type="checkbox" id="useUppercase" checked> Majuscules</label>
             </div>
             <div class="row">
-                <label><input type="checkbox" id="useDigits" checked> Numbers</label>
-                <label><input type="checkbox" id="useSpecialChars" checked> Special Characters</label>
+                <label><input type="checkbox" id="useDigits" checked> Chiffres</label>
+                <label><input type="checkbox" id="useSpecialChars" checked> Caractères spéciaux</label>
             </div>
         </div>
 
+
         <!-- Custom pool -->
-        <label for="customPool">Custom Characters (optional):</label>
+        <label for="customPool">Caractères personnalisés (facultatif) :</label>
         <textarea id="customPool" placeholder="abc123...">abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_+=</textarea>
 
-        <!-- Personal Mode -->
-        <label><input type="checkbox" id="personal"> Personal Mode (uses custom pool)</label>
+        <!-- Personal -->
+        <label><input type="checkbox" id="personal"> Mode personnel (utilise pool personnalisé)</label>
 
         <!-- Generate Button -->
-        <button id="generateBtn" disabled>Generate</button>
+        <button id="generateBtn" disabled>Afficher</button>
     </div>
 
     <!-- Footer -->
