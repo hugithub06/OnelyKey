@@ -227,6 +227,14 @@ section h2 {
     margin-bottom: 15px;
     color: #004680;
 }
+
+h1#welcome-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #004680;
+}
+
 section p, section li {
     font-size: 1rem;
     line-height: 1.6;
@@ -312,6 +320,11 @@ li {
         max-width: none;       /* supprime la limite de 500px */
         margin: 20px 10px 80px 10px; /* marge 10px sur les côtés, marge en bas pour le footer */
         border-radius: 0;      /* optionnel : supprime les angles arrondis pour coller au bord */
+    }
+
+    #app-header {
+        font-size: 1.5rem;
+        padding: 15px 0;
     }
 
     header nav ul {
