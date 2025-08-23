@@ -307,6 +307,14 @@ li {
 }
 
 
+a.mail-link {
+    color: white;
+    text-decoration: none;
+  }
+  a.mail-link:hover {
+    text-decoration: underline; /* souligné au survol */
+  }
+
 
 /* --- Version mobile --- */
 @media (max-width: 768px) {
