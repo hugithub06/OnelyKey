@@ -32,6 +32,11 @@ main {
     font-weight: bold;
 }
 
+span {
+  font-size: 4rem;    /* même taille que ton h1 */
+}
+
+
 header nav {
     margin-top: 10px;
     font-size: 1.4rem
