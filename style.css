@@ -3,6 +3,9 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 body:not(#home-body) {
     background: #f0f0f0;
@@ -319,6 +322,16 @@ a.mail-link {
   a.mail-link:hover {
     text-decoration: underline; /* souligné au survol */
   }
+
+.social-links a i {
+    color: #fff; /* blanc */
+    font-size: 1.5em;
+    margin: 0 8px;
+    transition: color 0.2s;
+}
+.social-links a:hover i {
+    color: #ffd700; /* jaune doré au survol, optionnel */
+}
 
 
 /* --- Version mobile --- */
