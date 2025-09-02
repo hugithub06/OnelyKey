@@ -334,6 +334,107 @@ a.mail-link {
 }
 
 
+/* ===== Table des matières ===== */
+.toc {
+    margin: 32px auto 32px auto;
+    background: #f4f8fc;
+    border-radius: 12px;
+    padding: 24px 18px;
+    max-width: 700px;
+    box-shadow: 0 2px 12px rgba(0,72,128,0.07);
+}
+.toc h2 {
+    font-size: 1.4rem;
+    color: #004680;
+    margin-bottom: 18px;
+    text-align: left;
+}
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.toc li {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px 10px;
+    transition: box-shadow 0.2s;
+}
+.toc li:hover {
+    box-shadow: 0 2px 8px rgba(0,72,128,0.08);
+}
+.toc-img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #e8e8e8;
+    flex-shrink: 0;
+}
+.toc a {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    text-decoration: none; /* enlève le soulignage */
+    color: inherit;
+}
+.toc-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 24px;
+}
+.toc strong {
+    font-size: 1.08rem;
+    color: #004680;
+    margin-bottom: 0;
+    margin-right: 18px;
+    display: block;
+    min-width: 180px;
+    text-align: left;
+}
+.toc span {
+    font-size: 0.98rem;
+    color: #444;
+    display: block;
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 0;
+    flex: 1;
+}
+@media (max-width: 600px) {
+    .toc-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    .toc strong {
+        min-width: unset;
+        margin-right: 0;
+        font-size: 1rem;
+    }
+    .toc span {
+        font-size: 0.93rem;
+    }
+}
+.back-to-toc {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 0.97rem;
+    color: #004680;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 /* --- Version mobile --- */
 @media (max-width: 768px) {
 
@@ -360,5 +461,28 @@ a.mail-link {
 
     header nav ul li a {
         display: block;
+    }
+}
+
+/* Banderole bleue en haut et bas de chaque chapitre */
+.chapter-banner {
+    width: 100vw;
+    max-width: 100%;
+    height: 18px;
+    background: #004680;
+    margin-left: calc(-50vw + 50%);
+    margin-bottom: 0;
+    border-radius: 0 0 12px 12px;
+}
+
+.chapter-banner.bottom {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 12px 12px 0 0;
+}
+@media (max-width: 800px) {
+    .chapter-banner, .chapter-banner.bottom {
+        height: 12px;
+        border-radius: 0;
     }
 }
