@@ -464,25 +464,24 @@ a.mail-link {
     }
 }
 
-/* Banderole bleue en haut et bas de chaque chapitre */
-.chapter-banner {
-    width: 100vw;
-    max-width: 100%;
+/* Banderole bleue en haut et bas de chaque chapitre - 100% largeur */
+.chapter-banner,
+.chapter-banner.bottom {
+    width: 100%;
     height: 18px;
     background: #004680;
-    margin-left: calc(-50vw + 50%);
-    margin-bottom: 0;
-    border-radius: 0 0 12px 12px;
+    margin: 0 auto;
+    border-radius: 0;
+    z-index: 1;
 }
 
 .chapter-banner.bottom {
     margin-top: 40px;
     margin-bottom: 40px;
-    border-radius: 12px 12px 0 0;
 }
 @media (max-width: 800px) {
-    .chapter-banner, .chapter-banner.bottom {
+    .chapter-banner,
+    .chapter-banner.bottom {
         height: 12px;
-        border-radius: 0;
     }
 }
