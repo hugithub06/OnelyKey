@@ -464,6 +464,97 @@ a.mail-link {
     }
 }
 
+/* --- Desktop section formatting --- */
+@media (min-width: 769px) {
+    section {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: left; /* le contenu n'est plus centré */
+        padding: 48px 40px;
+    }
+    section h2 {
+        text-align: center;
+        margin-bottom: 36px;
+    }
+    section h3 {
+        text-align: left;
+        margin-left: 40px;
+        margin-top: 48px;
+        margin-bottom: 18px;
+    }
+    section p, section ul, section li {
+        text-align: left;
+        margin-left: 40px;
+        margin-bottom: 36px;
+    }
+    section ul {
+        margin-bottom: 36px;
+    }
+    section .block {
+        margin-bottom: 40px; /* grand espace entre les blocs */
+    }
+    section .block h3 {
+        margin-left: 40px;
+        margin-top: 48px;
+        margin-bottom: 18px;
+        text-align: left;
+    }
+    section .block p {
+        margin-left: 40px;
+        margin-bottom: 10px; /* petit espace entre p d'un même bloc */
+        text-align: left;
+    }
+    section .block p + p {
+        margin-top: 4px; /* espace réduit entre deux p consécutifs */
+    }
+    section .block ul {
+        margin-left: 40px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    section .block li {
+        margin-bottom: 6px;
+        text-align: left;
+    }
+    /* Optionnel : retire les marges globales sur section p, ul, li */
+    section p, section ul, section li {
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+}
+
+/* Nouvelle règle pour écrans larges */
+@media (min-width: 1024px) {
+    section {
+        max-width: 80vw;
+        min-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+        padding: 48px 32px;
+    }
+}
+
+/* Espaces entre blocs h3+p, h3+ul, p+h3, ul+h3 */
+@media (min-width: 769px) {
+    section h3 + p,
+    section h3 + ul,
+    section p + h3,
+    section ul + h3 {
+        margin-top: 36px;
+    }
+    /* Réduit la marge entre les éléments d'une liste */
+    section ul {
+        margin-bottom: 12px;
+    }
+    section li {
+        margin-bottom: 8px;
+    }
+    /* Réduit la marge entre p consécutifs */
+    section p + p {
+        margin-top: 8px;
+    }
+}
+
 /* Banderole bleue en haut et bas de chaque chapitre - 100% largeur */
 .chapter-banner,
 .chapter-banner.bottom {
@@ -484,4 +575,30 @@ a.mail-link {
     .chapter-banner.bottom {
         height: 12px;
     }
+}
+
+@media (min-width: 900px) {
+  .block-img {
+    position: relative;
+    min-height: 180px;
+  }
+  .block-img .side-img {
+    float: right;
+    max-width: 220px;
+    width: 30%;
+    margin: 0 0 16px 32px;
+  }
+  .block-img h2, .block-img p {
+    /* le texte s’adapte à la place restante */
+    text-align: left;
+  }
+}
+@media (max-width: 899px) {
+  .block-img .side-img {
+    display: block;
+    float: none;
+    margin: 24px auto 16px auto;
+    max-width: 320px;
+    width: 100%;
+  }
 }
