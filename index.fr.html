@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Générateur de mots de passe sécurisé, non stockés | OnelyKey</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="description" content="Générez des mots de passe forts et sécurisés. Vos mots de passe ne sont jamais stockés, mais vous pouvez toujours les retrouver grâce à votre mot de passe maître avec OnelyKey.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -96,7 +97,8 @@
   <div class="chapter-banner bottom"></div>
 
   <!-- Section 1 : 0 collecte de données -->
-  <section class="feature" id="aucune-collecte">
+
+  <section class="left" id="aucune-collecte">
     <div class="block">
     <h2>🚫 Aucune collecte de données</h2>
     
@@ -191,9 +193,9 @@
     Vos mots de passe vous appartiennent, et grâce à OnelyKey, ils le resteront.
   </p>
   </div>
-
-    <a href="#top" class="back-to-toc">Retour à la table des matières</a>
   </section>
+
+  <a href="#top" style = text-align:center; class="back-to-toc">Retour à la table des matières</a>
 
   <div class="chapter-banner bottom"></div>
 
@@ -221,17 +223,142 @@
   <div class="chapter-banner bottom"></div>
 
   <!-- Section 3 : Principe -->
-  <section class="feature" id="principe">
-    <h2>⚙️ Principe et fonctionnement</h2>
+
+  <section class="left" id="principe">
+  <h2>⚙️ Fonctionnement de OnelyKey</h2>
+  <div class="block">
     <p>
-      Entrez un mot de passe maître et un nom de site, OnelyKey génère automatiquement un mot de passe propre à ces entrées et sécurisé pour ce service.<br><br>
-      <strong>Comment ça marche ?</strong><br>
-      Grâce à un algorithme de dérivation, le même mot de passe maître et le même nom de site produisent toujours le même mot de passe, sans stockage.<br><br>
-      <em>Testez le générateur pour voir la simplicité et la puissance du système !</em>
+      OnelyKey a été conçu pour être à la fois <strong>simple d’utilisation</strong> et 
+      <strong>rigoureusement sécurisé</strong>. Son principe repose sur une idée claire : 
+      <strong>vos mots de passe ne sont jamais stockés en clair</strong>, 
+      ils sont générés localement à partir de votre <em>mot de passe maître</em> 
+      et du <em>nom du site</em>. Cela signifie qu’un même mot de passe maître 
+      donnera toujours un mot de passe différent pour chaque service, 
+      garantissant une sécurité totale sans avoir à tout retenir.
     </p>
-    <img src="picture/fonctionnal.png" alt="Schéma du fonctionnement de l’application">
-    <a href="#top" class="back-to-toc">Retour à la table des matières</a>
-  </section>
+  </div>
+
+  <h3>🔑 Le mot de passe maître</h3>
+  <div class="block">
+    <p>
+      Le <strong>mot de passe maître</strong> est la seule clé que vous devez mémoriser. 
+      Il ne sort jamais de votre appareil et n’est jamais sauvegardé en clair. 
+      Pour chaque site ou service, OnelyKey combine votre mot de passe maître 
+      avec le <strong>nom du site</strong> afin de produire un mot de passe unique 
+      (<em>MP + SiteName = MP_duSite</em>).
+    </p>
+  </div>
+  <div class="block">
+    <p>
+      Techniquement, OnelyKey applique une fonction de dérivation de clé 
+      (<strong>PBKDF2 avec HMAC-SHA256</strong>) qui exécute 
+      <strong>des milliers d’itérations</strong> et ajoute un <em>sel aléatoire</em> 
+      pour générer une clé cryptographique robuste. 
+      Cela ralentit considérablement toute tentative de piratage par force brute, 
+      rendant la récupération de vos données pratiquement impossible sans 
+      le mot de passe maître.
+    </p>
+  </div>
+
+  <h3>🧩 Le chiffrement des données (bonus mobile)</h3>
+  <div class="block">
+    <p>
+      Pour simplifier l’usage sur mobile, OnelyKey permet aussi de stocker 
+      vos sites, identifiants et notes dans un fichier local chiffré. 
+      Ce stockage est <strong>optionnel</strong> : il s’agit d’un confort 
+      pour éviter de retaper les noms de sites ou leurs particularités, 
+      mais il ne remplace pas le mécanisme principal de génération.
+    </p>
+  </div>
+  <div class="block">
+    <p>
+      Chaque entrée est <strong>chiffrée individuellement</strong> avec 
+      <strong>AES (Advanced Encryption Standard) en mode CBC</strong> 
+      et <strong>PKCS5Padding</strong>. 
+      AES est l’algorithme de chiffrement utilisé par les gouvernements, 
+      banques et grandes entreprises pour protéger leurs données sensibles.
+    </p>
+  </div>
+  <div class="block">
+    <p>
+      Le mode CBC (Cipher Block Chaining) chiffre vos données en blocs reliés 
+      entre eux, rendant toute modification indétectable. 
+      Chaque chiffrement utilise un <strong>vecteur d’initialisation (IV) aléatoire</strong>, 
+      garantissant que même deux données identiques donneront toujours un résultat différent. 
+      Le padding <strong>PKCS5Padding</strong> assure la compatibilité 
+      avec la taille fixe des blocs AES.
+    </p>
+  </div>
+
+  <h3>📱 Mobile et 💻 Web : même sécurité</h3>
+  <div class="block">
+    <p>
+      <strong>Sur mobile (application Android)</strong>, 
+      toutes les opérations cryptographiques (dérivation de clé, génération de mot de passe, 
+      chiffrement/déchiffrement du fichier local) sont exécutées directement 
+      dans l’application en Kotlin. 
+      Le fichier chiffré reste stocké uniquement sur votre appareil.
+    </p>
+  </div>
+  <div class="block">
+    <p>
+      <strong>Sur web (navigateur PC)</strong>, 
+      le fonctionnement est identique, sans stockage : 
+      le mot de passe maître et le nom du site sont combinés localement 
+      via JavaScript (<code>SubtleCrypto API</code>) pour générer 
+      le mot de passe correspondant. 
+      <strong>Aucune donnée n’est transmise au serveur</strong> : 
+      tout est calculé en local, directement dans votre navigateur.
+    </p>
+  </div>
+    <h3>🛡️ Standards et barèmes de sécurité</h3>
+  <div class="block">
+    <ul>
+      <li><strong>AES-256-CBC + PKCS5Padding</strong> : standard validé par le <em>NIST</em>, 
+      utilisé par les gouvernements et les banques.</li>
+      <li><strong>PBKDF2-HMAC-SHA256</strong> : fonction de dérivation robuste recommandée par la <em>NIST</em>, 
+      appliquant des milliers d’itérations pour renforcer la sécurité du mot de passe maître.</li>
+      <li><strong>IV aléatoires de 128 bits</strong> générés à chaque chiffrement, garantissant que chaque entrée est unique 
+      et résistante aux attaques par répétition.</li>
+      <li><strong>Salt de 128 bits</strong> appliqué à chaque dérivation de clé, empêchant l’utilisation de tables arc-en-ciel 
+      et compliquant toute attaque par dictionnaire.</li>
+    </ul>
+  </div>
+
+  <h3>✅ Résumé simple pour tous</h3>
+  <div class="block">
+    <p>
+      En clair : votre mot de passe maître, combiné avec le nom du site, 
+      génère toujours le même mot de passe unique pour ce service. 
+      Ce calcul est fait uniquement en local, sans jamais rien stocker ni transmettre : 
+      vos mots de passe n’existent qu’au moment où vous en avez besoin.
+    </p>
+  </div>
+  <div class="block">
+    
+    <p>
+      Sur mobile, vous pouvez choisir un <strong>stockage local chiffré</strong> 
+      pour garder en mémoire vos sites et leurs particularités : 
+      c’est un <em>bonus de confort</em>, mais pas une nécessité. 
+      Même sans ce fichier, vous retrouverez toujours vos mots de passe grâce 
+      à la combinaison <em>Mot de passe maître + Nom du site</em>.
+    </p>
+  </div>
+  <img src="picture/fonctionnal.png" alt="Schéma du fonctionnement de l’application"style="display:block;margin-left:auto;margin-right:auto;">
+  <div class="block">
+    <p>
+      👉 C’est ce mélange de <em>simplicité</em> et de <em>rigueur technique</em> 
+      qui fait la force d’OnelyKey.
+    </p>
+  </div>
+
+  
+  
+</section>
+
+<a href="#top" style = text-align:center; class="back-to-toc">Retour à la table des matières</a>
+  
+
 
   <div class="chapter-banner bottom"></div>
 
