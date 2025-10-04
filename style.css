@@ -466,97 +466,103 @@ a.mail-link {
 }
 
 /* --- Desktop section formatting simplifié --- */
-@media (min-width: 769px) {
-  section.left {
-    max-width: 80vw;
-    min-width: 900px;
-    margin: 0 auto;
-    padding: 48px 32px;
-    text-align: left;
-  }
-  section.left h2 {
-    text-align: center;
-    margin-bottom: 36px;
-  }
-  section.left h3 {
-    margin: 48px 0 18px 40px;
-    text-align: left;
-  }
-  section.left .block {
-    margin-bottom: 40px;
-  }
-  section.left .block h3,
-  section.left .block p,
-  section.left .block ul,
-  section.left .block li {
-    margin-left: 40px;
-    text-align: left;
-  }
-  section.left .block p {
-    margin-bottom: 10px;
-  }
-  section.left .block p + p {
-    margin-top: 4px;
-  }
-  section.left .block ul {
-    margin-bottom: 10px;
-  }
-  section.left .block li {
-    margin-bottom: 6px;
-  }
-  section.left h3 + p,
-  section.left h3 + ul,
-  section.left p + h3,
-  section.left ul + h3 {
-    margin-top: 36px;
-  }
-  section.left ul {
-    margin-bottom: 12px;
-  }
-  section.left li {
-    margin-bottom: 8px;
-  }
-  section.left p + p {
-    margin-top: 8px;
-  }
+/* =============================== */
+/*   SECTIONS LEFT / RIGHT STYLE   */
+/* =============================== */
+
+/* Base commune */
+section.left,
+section.right {
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 48px 32px;
 }
-@media (min-width: 1200px) {
-  section.left .block {
-    max-width: 50vw;      /* le texte prend au plus la moitié de l'écran */
-    margin-left: 40px;    /* marge à gauche comme avant */
-    margin-right: auto;   /* colle à gauche */
+
+/* Centrage du titre principal */
+section.left h2,
+section.right h2 {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+/* Blocs de texte internes */
+section.left .block,
+section.right .block {
+  margin-bottom: 28px;
+}
+
+section.left p,
+section.right p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+section.left h3,
+section.right h3 {
+  margin: 36px 0 14px;
+  font-size: 1.2rem;
+}
+
+/* --- VERSION LARGE ÉCRAN --- */
+@media (min-width: 900px) {
+  section.left,
+  section.right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
   }
-  section.left .block h3,
-  section.left .block p,
-  section.left .block ul,
-  section.left .block li {
-    margin-left: 0;       /* plus besoin de marge interne */
+
+  /* La colonne de texte prend 60% */
+  section.left .block,
+  section.right .block {
+    flex: 0 0 60%;
+  }
+
+  /* Pour que les .block restent empilés */
+  section.left .block-container,
+  section.right .block-container {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 60%;
+  }
+
+  /* L'image de la section */
+  section.left > img,
+  section.right > img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    border-radius: 12px;
+    object-fit: contain;
+    align-self: center;
+  }
+
+  /* Ordre des éléments */
+  section.left {
+    flex-direction: row; /* texte à gauche, image à droite */
+  }
+
+  section.right {
+    flex-direction: row-reverse; /* texte à droite, image à gauche */
   }
 }
 
-/* Images à droite dans les blocs avec .block-img */
-@media (min-width: 900px) {
-  .block-img {
-    position: relative;
-    min-height: 180px;
-  }
-  .block-img .side-img {
-    float: right;
-    max-width: 220px;
-    width: 30%;
-    margin: 0 0 16px 32px;
-    border-radius: 8px;
-  }
-}
+/* --- VERSION MOBILE --- */
 @media (max-width: 899px) {
-  .block-img .side-img {
+  section.left,
+  section.right {
     display: block;
-    float: none;
-    margin: 24px auto 16px auto;
-    max-width: 320px;
-    width: 100%;
+  }
+
+  section.left > img,
+  section.right > img {
+    display: block;
+    max-width: 100%;
+    margin: 24px auto;
+    border-radius: 10px;
   }
 }
+
 
 .chapter-banner,
 .chapter-banner.bottom {

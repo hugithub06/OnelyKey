@@ -1,0 +1,100 @@
+/* =============================== */
+/*   SECTIONS LEFT / RIGHT STYLE   */
+/* =============================== */
+
+/* --- Base commune aux deux sections --- */
+section.left, 
+section.right {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 48px 32px;
+}
+
+section.left h2,
+section.right h2 {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+section.left h3,
+section.right h3 {
+  margin: 48px 0 18px;
+}
+
+section.left .block,
+section.right .block {
+  margin-bottom: 40px;
+}
+
+section.left p,
+section.right p,
+section.left ul,
+section.right ul {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* --- Disposition responsive : texte + image --- */
+@media (min-width: 900px) {
+  section.left .block,
+  section.right .block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  /* Ratio texte 60% / image 40% */
+  section.left .block .text,
+  section.right .block .text {
+    flex: 0 0 60%;
+  }
+
+  section.left .block .side-img,
+  section.right .block .side-img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  /* Sens de disposition : texte gauche / image droite */
+  section.left .block {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  /* Sens inverse : texte droite / image gauche */
+  section.right .block {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+}
+
+/* --- Sur mobile ou petite largeur : empilement --- */
+@media (max-width: 899px) {
+  section.left .block,
+  section.right .block {
+    display: block;
+    text-align: left;
+  }
+
+  section.left .block .side-img,
+  section.right .block .side-img {
+    display: block;
+    max-width: 100%;
+    margin: 16px auto 0 auto;
+    border-radius: 8px;
+  }
+}
+
+/* --- Petites retouches typographiques --- */
+section.left li,
+section.right li {
+  margin-bottom: 6px;
+}
+
+section.left h3 + p,
+section.right h3 + p {
+  margin-top: 8px;
+}
