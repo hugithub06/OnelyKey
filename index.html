@@ -12,6 +12,7 @@
     <link rel="alternate" hreflang="fr" href="https://onelykey.com/index.fr.html">
     
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 
     <script>
@@ -26,12 +27,6 @@
         case "fr":
         window.location.href = "index.fr.html";
         break;
-        case "es":
-        window.location.href = "index.es.html";
-        break;
-        case "de":
-        window.location.href = "index.de.html";
-        break;
         default:
         // stay on index.html (English by default)
         break;
@@ -45,96 +40,310 @@
         <span>OnelyKey</span>
         <nav>
              <ul>
-                <li><a href="generation/index.html">Generator</a></li>
+                <li><a href="generation/index.html">Generation</a></li>
              </ul>
           </nav>
     </header>
 
     <section class="welcome">
       <h1 id="welcome-title">Welcome to OnelyKey</h1>
-      <p>With OnelyKey, managing all your passwords has never been easier.</p>
+      <p>With OnelyKey, finding all your passwords becomes child's play.</p>
     </section>
 
+    <nav class="toc">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li>
+          <a href="#avantages">
+            <img src="https://img.icons8.com/fluency/48/free-shipping.png" alt="Free" class="toc-img">
+            <div class="toc-content">
+              <strong>✨ Advantages of OnelyKey</strong>
+              <span>Free, fast, secure, and accessible everywhere.</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#conseils-securite">
+            <img src="https://img.icons8.com/fluency/48/security-shield-green.png" alt="Web security" class="toc-img">
+            <div class="toc-content">
+              <strong>🛡️ Security Tips</strong>
+              <span>Follow best practices to protect your accounts.</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#fonctionnement">
+            <img src="https://img.icons8.com/fluency/48/automatic.png" alt="Gear" class="toc-img">
+            <div class="toc-content">
+              <strong>⚙️ Principle & Functionality</strong>
+              <span>One master password, one site, lifetime secure access.</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#aucune-collecte">
+            <img src="https://img.icons8.com/fluency/48/no-entry.png" alt="No entry" class="toc-img">
+            <div class="toc-content">
+              <strong>🚫 No Data Collection</strong>
+              <span>Your information stays on your device, never stored or shared.</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#mobile">
+            <img src="https://play-lh.googleusercontent.com/8G696IElUtOHCd2-n3FxR5DS_I-nkOIWNi01-CCftvPPrIbBLJnhLhVxxuxokPO1WmObHMV1W2TmnURfOnoJbu0=w240-h480-rw" alt="Mobile" class="toc-img">
+            <div class="toc-content">
+              <strong>📱 Mobile Availability</strong>
+              <span>Use OnelyKey on your smartphone, even offline.</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
     <section class="hero">
-    <div class="hero-text">
-      <h2>Your Security, Our Priority</h2>
-      <p>OnelyKey generates strong passwords completely privately. No tracking, no data collection.</p>
-      <a href="generation/index.html" class="btn">Start Generating</a>
-    </div>
-    <div class="hero-img">
-      <img src="https://play-lh.googleusercontent.com/8G696IElUtOHCd2-n3FxR5DS_I-nkOIWNi01-CCftvPPrIbBLJnhLhVxxuxokPO1WmObHMV1W2TmnURfOnoJbu0=w240-h480-rw" alt="icon OnelyKey">
-    </div>
-  </section>
+        <div class="hero-text">
+          <h2>Your Security, Our Priority</h2>
+          <p>OnelyKey generates strong passwords in full privacy. No tracking, no data collection.</p>
+          <a href="generation/index.html" class="btn">Start Generating</a>
+        </div>
+        <div class="hero-img">
+          <img src="https://play-lh.googleusercontent.com/8G696IElUtOHCd2-n3FxR5DS_I-nkOIWNi01-CCftvPPrIbBLJnhLhVxxuxokPO1WmObHMV1W2TmnURfOnoJbu0=w240-h480-rw" alt="OnelyKey icon">
+        </div>
+    </section>
 
-  <!-- Section 1: Zero Data Collection -->
-  <section class="feature">
-    <h2>🚫 No Data Collection</h2>
-    <p>OnelyKey does not store any personal information. All your passwords are generated locally on your device, ensuring complete privacy. They are never stored or shared with third parties.</p>
-    <img src="picture/noCollect.png" alt="Privacy and data protection icon">
-  </section>
+    <!-- Section 1: Advantages -->
+    <section class="left" id="avantages">
+      <div class="block-container">
+        <h2>✨ Advantages of OnelyKey</h2>
+        <p>
+          <strong>OnelyKey</strong> is more than just a password generator.  
+          It is a complete solution designed to combine <strong>security, simplicity, and autonomy</strong>.  
+          Whether on mobile or browser, OnelyKey adapts to your usage to provide a smooth experience without compromising privacy.
+        </p>
 
-  <!-- Section 2: Benefits -->
-  <section class="feature alt">
-    <h2>✨ Why Choose OnelyKey</h2>
-    <ul>
-      <li>✅ 100% Free</li>
-      <li>✅ No Sign-Up Required</li>
-      <li>✅ Works on PC and Mobile</li>
-      <li>✅ Simple and Fast Interface</li>
-      <li>✅ Accessible from any device with Internet</li>
-      <li>✅ Or offline via the mobile app</li>
-      <li>✅ High security thanks to strong encryption</li>
-    </ul>
-    <img src="picture/advantage.png" alt="User benefits illustration">
-  </section>
+        <h3>🌍 Accessible Everywhere</h3>
+        <p>
+          Use OnelyKey on any device with a web browser, or offline with the mobile app.  
+          No account, no sync: just know your master password to access your credentials anywhere.
+        </p>
 
-  <!-- Section 3: How It Works -->
-  <section class="feature">
-    <h2>⚙️ How It Works</h2>
-    <p>Enter a master password and a site name, and OnelyKey automatically generates a unique, secure password for that service. No need to memorize multiple passwords – one is enough!</p>
-    <img src="picture/fonctionnal.png" alt="Diagram showing app functionality">
-  </section>
+        <h3>⚡ Simple and Fast</h3>
+        <p>
+          OnelyKey’s clean interface allows you to generate, retrieve, or encrypt your credentials in seconds.  
+          No registration, no complicated setup — everything is calculated instantly on your device, locally, without relying on a network or server.
+        </p>
 
-  <!-- Section 4: Security Tips -->
-  <section class="feature alt">
-    <h2>🛡️ Security Tips</h2>
-    <p>To strengthen your online security:</p>
-    <ul>
-      <li>⚡ Use long, varied passwords</li>
-      <li>⚡ Test the strength of your master password before use</li>
-      <li>⚡ Enable two-factor authentication when possible</li>
-      <li>⚡ Never reuse the same password</li>
-    </ul>
-    <img src="" alt="Cybersecurity illustration">
-  </section>
+        <h3>🔒 Professional-Level Security</h3>
+        <p>
+          Each password is generated using a unique cryptographic calculation based on internationally recognized standards (<strong>AES/CBC</strong> with <strong>PKCS5Padding</strong>).  
+          Your data never leaves your device and remains <strong>completely indecipherable</strong> even in case of theft or unauthorized access.
+        </p>
 
-  <section class="feature alt">
-    <h2>📱 Available on Mobile</h2>
-    <p>OnelyKey is also available as a mobile app for easy offline use. Store your site names and details securely on your device to quickly retrieve your passwords.</p>
-    <div class="playstore-container">
-    <img src="https://play-lh.googleusercontent.com/8G696IElUtOHCd2-n3FxR5DS_I-nkOIWNi01-CCftvPPrIbBLJnhLhVxxuxokPO1WmObHMV1W2TmnURfOnoJbu0=w240-h480-rw" alt="Mobile app icon" id="mobile-icon">
+        <h3>💡 Freedom & Full Independence</h3>
+        <p>
+          Unlike traditional password managers, OnelyKey does not rely on any external service.  
+          No account creation, no collection, no subscription — you remain <strong>100% in control of your information</strong>.  
+          It’s your tool, your security, your rules.
+        </p>
+
+        <h3>👥 For All Users</h3>
+        <p>
+          Whether you are an individual, a professional, or a student, OnelyKey adapts to your needs.  
+          Its universal approach and intuitive interface make it easy for anyone to enhance their digital security.
+        </p>
+
+        <p>
+          👉 Try OnelyKey and discover a new way to manage passwords:  
+          <strong>simpler, safer, and fully independent</strong>.
+        </p>
+        <a href="#top" class="back-to-toc">Back to Table of Contents</a>
+      </div>
+
+      <img src="picture/avantageLight.png" alt="Illustration of OnelyKey advantages">
+    </section>
+
+    <!-- Section 2: Security Tips -->
+    <section class="right" id="conseils-securite">
+      <div class="block-container">
+        <h2>🛡️ Security Tips</h2>
+        <p>
+          OnelyKey protects your passwords with proven standards, 
+          but your security also depends on a few essential best practices:
+        </p>
+        <ul>
+          <li>⚡ Choose a <strong>long and unique master password</strong> 
+          (at least 12–16 characters with numbers and symbols).</li>
+          <li>⚡ <strong>Never share</strong> your master password: 
+          it is the key to your entire digital vault.</li>
+          <li>⚡ Use <strong>two-factor authentication</strong> 
+          for important services (email, banking, social networks).</li>
+          <li>⚡ Benefit from the <em>Master Password + Site Name</em> system: 
+          no password needs to be remembered or stored.</li>
+          <li>⚡ Keep your app and browser <strong>up to date</strong> 
+          to receive the latest security patches.</li>
+        </ul>
+        <p>
+          <strong>Did you know?</strong><br>
+          A 16-character random password would take billions of years to crack using current brute-force methods.  
+          <br><br>
+          <em>OnelyKey makes creating complex passwords simple and instant — just choose a good master password.</em>
+        </p>
+        <a href="#top" class="back-to-toc">Back to Table of Contents</a>
+      </div>
+      <img src="picture/securityLight.png" alt="Cybersecurity illustration">
+    </section>
+
+    <!-- Section 3: Functionality -->
+    <section class="left" id="fonctionnement">
+      <div class="block-container">
+        <h2>⚙️ How OnelyKey Works</h2>
+        <p>
+          OnelyKey is based on a simple but powerful idea: 
+          <strong>no data needs to be stored to generate or retrieve your passwords</strong>.  
+          Everything is calculated locally, in real-time, from your master password.
+        </p>
+
+        <h3>🧩 Unique Calculation for Each Site</h3>
+        <p>
+          For each site or service, OnelyKey combines your master password with the site name 
+          to generate a unique password.  
+          The same master password will always produce the same result for a given site, 
+          without ever storing anything.
+        </p>
+        <p>
+          This ensures that even when switching devices, 
+          you can instantly retrieve your passwords 
+          without syncing or backups.
+        </p>
+
+        <h3>🔒 Proven Encryption: AES/CBC with PKCS5Padding</h3>
+        <p>
+          When local storage is used (for notes, credentials, or encrypted entries), 
+          OnelyKey applies the <strong>AES (Advanced Encryption Standard)</strong> 
+          algorithm in <strong>CBC (Cipher Block Chaining)</strong> mode with 
+          <strong>PKCS5Padding</strong>.  
+          This combination is a security benchmark used in many banking and government applications.
+        </p>
+        <p>
+          The encryption key is derived from your master password using a 
+          <strong>strengthened cryptographic hash</strong>, 
+          ensuring that no attacker can recover your password.
+        </p>
+
+        <h3>💾 Smart Local Storage</h3>
+        <p>
+          Encrypted data (if you choose to save any) is stored in a local file, 
+          accessible only by OnelyKey.  
+          No online sync, no external transfer: 
+          <strong>everything stays on your device</strong>.
+        </p>
+        <p>
+          Even if the file is copied or stolen, 
+          its content remains unreadable without the correct master password.
+        </p>
+
+        <h3>✨ Simplicity & Security Combined</h3>
+        <p>
+          No need to manage a complex database or remember dozens of passwords.  
+          OnelyKey transforms your master password into a universal key, 
+          able to recreate your credentials on demand, 
+          <strong>without ever storing or transmitting them</strong>.
+        </p>
+
+        <p>
+          👉 Result: maximum security, full independence, 
+          and unmatched convenience — all <strong>without compromising privacy</strong>.
+        </p>
+
+        <p>
+          👉 It’s this blend of <em>simplicity</em> and <em>technical rigor</em> 
+          that makes OnelyKey strong.
+        </p>
+
+        <a href="#top" class="back-to-toc">Back to Table of Contents</a>
+      </div>
+      <img src="picture/fonctionnementLight.png" alt="App functionality diagram">
+    </section>
+
+    <!-- Section 4: No Data Collection -->
+    <section class="right" id="aucune-collecte">
+      <div class="block-container">
+        <h2>🚫 No Data Collection</h2>
+        <p>
+          At <strong>OnelyKey</strong>, privacy is not a slogan — it’s a <strong>founding principle</strong>.  
+          No personal data, no passwords, no sensitive information is ever collected.
+        </p>
+
+        <h3>🔐 Zero Cloud, Zero Server</h3>
+        <p>
+          OnelyKey works without any remote server or online database.  
+          There is <strong>no centralized storage</strong>: all your information 
+          stays exclusively on your device.
+        </p>
+
+        <h3>📱 Local and Private</h3>
+        <p>
+          Encryption, decryption, and password generation happen directly on your device.  
+          Neither developers, third-party services, nor OnelyKey can access your data — 
+          it <strong>never leaves your device</strong>.
+        </p>
+
+        <h3>🧭 Transparency & Independence</h3>
+        <ul>
+          <li><strong>No ads</strong> or tracking.</li>
+          <li><strong>No dependency</strong> on an Internet connection.</li>
+          <li><strong>No collection</strong> of email or user ID.</li>
+          <li><strong>No profiling</strong> or third-party sharing.</li>
+        </ul>
+        <p>
+          You remain the sole master of your data, and OnelyKey’s operation can be freely audited.
+        </p>
+
+        <p>
+          👉 In short, <strong>OnelyKey stores nothing and knows nothing about you</strong>.  
+          This fully local approach eliminates any risk of leaks or commercial exploitation.
+        </p>
+        <a href="#top" class="back-to-toc">Back to Table of Contents</a>
+      </div>
+      <img src="picture/noCollectLight.png" alt="Privacy and data security illustration">
+    </section>
+
+    <!-- Section 5: Mobile App -->
+    <section class="feature alt" id="mobile">
+      <h2>📱 Mobile Availability</h2>
+      <p>
+        OnelyKey is also available as a mobile app for easy offline use.<br><br>
+        <strong>Why choose the app?</strong><br>
+        The mobile app allows local storage of site names and lets you access passwords even without Internet.<br><br>
+        <em>Download it now and secure all your accounts!</em>
+      </p>
+      <div class="playstore-container">
+        <img src="https://play-lh.googleusercontent.com/8G696IElUtOHCd2-n3FxR5DS_I-nkOIWNi01-CCftvPPrIbBLJnhLhVxxuxokPO1WmObHMV1W2TmnURfOnoJbu0=w240-h480-rw" alt="Mobile app icon" id="mobile-icon">
         <a href="https://play.google.com/store/apps/details?id=com.hugard.password" target="_blank" class="btn playstore-btn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" />
         </a>
-    </div>
-  </section>
+      </div>
+      <a href="#top" class="back-to-toc">Back to Table of Contents</a>
+    </section>
 
-  <!-- Trustpilot Widget -->
-   <section class="trustpilot-section">
-    <div class="trustpilot-widget" data-locale="en-GB" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68aee7dce9dab32fe8f283da" data-style-height="52px" data-style-width="100%" data-token="a082c556-254e-43e5-91ea-93ec6690887b">
-      <a href="https://uk.trustpilot.com/review/onelykey.com" target="_blank" rel="noopener">Trustpilot</a>
-    </div>
-  </section>
+    <!-- Trustpilot Widget -->
+    <section class="trustpilot-section">
+      <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68aee7dce9dab32fe8f283da" data-style-height="52px" data-style-width="100%" data-token="c9ba4039-3aeb-4b98-aedf-dd0fd3aac20f">
+        <a href="https://www.trustpilot.com/review/onelykey.com" target="_blank" rel="noopener">Trustpilot</a>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer id="app-footer">
-        <p>© 2025 OnelyKey | Contactez nous : <a class="mail-link" href="mailto:contact@onelykey.com">contact@onelykey.com</a></p>
-        <div class="social-links">
-        <a href="https://x.com/OnelyKeyCo" target="_blank" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+      <p>© 2025 OnelyKey | Contact us: <a class="mail-link" href="mailto:contact@onelykey.com">contact@onelykey.com</a></p>
+      <div class="social-links">
+          <a href="https://x.com/OnelyKeyCo" target="_blank" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
         <a href="https://instagram.com/OnelyKey" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.producthunt.com/products/secure-password-generator-3" target="_blank" title="Product Hunt"><i class="fab fa-product-hunt"></i></a>
-    </div>
+      </div>
     </footer>
+
 
     <script src="app.js"></script>
 </body>

@@ -507,45 +507,40 @@ section.right h3 {
 @media (min-width: 900px) {
   section.left,
   section.right {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* 60% texte, 40% image */
+    align-items: center; /* centre verticalement texte et image */
     gap: 40px;
   }
 
-  /* La colonne de texte prend 60% */
-  section.left .block,
-  section.right .block {
-    flex: 0 0 60%;
-  }
-
-  /* Pour que les .block restent empilés */
+  /* Bloc texte */
   section.left .block-container,
   section.right .block-container {
     display: flex;
     flex-direction: column;
-    flex: 0 0 60%;
+    justify-content: center;
   }
 
-  /* L'image de la section */
+  /* Image */
   section.left > img,
   section.right > img {
-    flex: 0 0 40%;
-    max-width: 40%;
-    border-radius: 12px;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
     object-fit: contain;
-    align-self: center;
+    border-radius: 12px;
   }
 
-  /* Ordre des éléments */
-  section.left {
-    flex-direction: row; /* texte à gauche, image à droite */
-  }
-
+  /* Pour inverser l’ordre sur la section droite */
   section.right {
-    flex-direction: row-reverse; /* texte à droite, image à gauche */
+    grid-template-columns: 2fr 3fr; /* image à gauche, texte à droite */
+  }
+
+  section.right > img {
+    order: -1;
   }
 }
+
 
 /* --- VERSION MOBILE --- */
 @media (max-width: 899px) {
